@@ -1,0 +1,46 @@
+.NAME
+    DnsClientNrptGlobal
+
+.DESCRIPTION
+    This resource is used to control DNS Client NRPT Global Settings for a node.
+
+.PARAMETER IsSingleInstance
+    Key - String
+    Allowed values: Yes
+    Specifies the resource is a single instance, the value must be 'Yes'.
+
+.PARAMETER EnableDAForAllNetworks
+    Write - String
+    Allowed values: EnableOnNetworkID, EnableAlways, Disable, DisableDA
+    Specifies DirectAccess (DA) settings.
+
+.PARAMETER QueryPolicy
+    Write - String
+    Allowed values: Disable, QueryIPv6Only, QueryBoth
+    Specifies the DNS client query policy.
+
+.PARAMETER SecureNameQueryFallback
+    Write - String
+    Allowed values: Disable, FallbackSecure, FallbackUnsecure, FallbackPrivate
+    SecureNameQueryFallback.
+
+.EXAMPLE 1
+
+Configure DNS Client NRPT global configuration and set EnableDAForAllNetworks to 'EnableAlways', QueryPolicy to 'QueryBoth' and SecureNameQueryFallback to 'FallbackSecure'.
+
+Configuration DnsClientNrptGlobal_Config
+{
+    Import-DscResource -Module NetworkingDsc
+
+    Node localhost
+    {
+        DnsClientNrptGlobal DnsClientNrptGlobal
+        {
+            IsSingleInstance        = 'Yes'
+            EnableDAForAllNetworks  = 'EnableAlways'
+            QueryPolicy             = 'QueryBoth'
+            SecureNameQueryFallback = 'FallbackSecure'
+        }
+    }
+}
+

@@ -1,0 +1,121 @@
+{
+  "NormalUserPassword": "User123!2026",
+
+  "BGDomainSam": "BG_DC_Domain",
+  "BGDomainPassword": "BG_Admin!2026",
+
+  "OpsAdminSam": "OpsAdmin",
+  "OpsAdminPassword": "Ops_admin!2026",
+  "GgServerAdminsSam": "GG_Server_Admins",
+
+  "OutPath": "C:\\DSC\\DC\\ADObjects-Out",
+
+  "Users": [
+    {
+      "resource_name": "UserIT",
+      "sam": "userIT",
+      "home_subdir": "userIT",
+      "has_home": true
+    },
+    {
+      "resource_name": "UserFIN",
+      "sam": "userFIN",
+      "home_subdir": "userFIN",
+      "has_home": true
+    },
+    {
+      "resource_name": "UserRRHH",
+      "sam": "userRRHH",
+      "home_subdir": "userRRHH",
+      "has_home": true
+    },
+    {
+      "resource_name": "UserPublic",
+      "sam": "UserPublic",
+      "has_home": false
+    },
+    {
+      "resource_name": "UserSinPermisos",
+      "sam": "SinPermisos",
+      "has_home": false
+    }
+  ],
+
+  "Groups": [
+    {
+      "resource_name": "GG_FS_PUBLIC_RW",
+      "name": "GG_FS_PUBLIC_RW",
+      "members_to_include": ["userIT", "userFIN", "userRRHH"],
+      "members_to_exclude": ["SinPermisos", "UserPublic"],
+      "depends_on_users": ["UserIT", "UserFIN", "UserRRHH", "UserSinPermisos", "UserPublic"]
+    },
+    {
+      "resource_name": "GG_FS_PUBLIC_RO",
+      "name": "GG_FS_PUBLIC_RO",
+      "members_to_include": ["UserPublic"],
+      "depends_on_users": ["UserPublic"]
+    },
+    {
+      "resource_name": "GG_FS_IT_RW",
+      "name": "GG_FS_IT_RW",
+      "members_to_include": ["userIT"],
+      "depends_on_users": ["UserIT"]
+    },
+    {
+      "resource_name": "GG_FS_IT_RO",
+      "name": "GG_FS_IT_RO",
+      "depends_on_users": ["UserIT"]
+    },
+    {
+      "resource_name": "GG_FS_RRHH_RW",
+      "name": "GG_FS_RRHH_RW",
+      "members_to_include": ["userRRHH"],
+      "depends_on_users": ["UserRRHH"]
+    },
+    {
+      "resource_name": "GG_FS_RRHH_RO",
+      "name": "GG_FS_RRHH_RO",
+      "depends_on_users": ["UserRRHH"]
+    },
+    {
+      "resource_name": "GG_FS_FIN_RW",
+      "name": "GG_FS_FIN_RW",
+      "members_to_include": ["userFIN"],
+      "depends_on_users": ["UserFIN"]
+    },
+    {
+      "resource_name": "GG_FS_FIN_RO",
+      "name": "GG_FS_FIN_RO",
+      "depends_on_users": ["UserFIN"]
+    },
+    {
+      "resource_name": "GG_FS_PROY_A_RW",
+      "name": "GG_FS_PROY_A_RW",
+      "members_to_include": ["userIT", "userFIN"],
+      "depends_on_users": ["UserIT", "UserFIN"]
+    },
+    {
+      "resource_name": "GG_FS_PROY_A_RO",
+      "name": "GG_FS_PROY_A_RO",
+      "members_to_exclude": ["userRRHH"],
+      "depends_on_users": ["UserIT", "UserFIN", "UserRRHH"]
+    },
+    {
+      "resource_name": "GG_FS_PROY_B_RW",
+      "name": "GG_FS_PROY_B_RW",
+      "members_to_include": ["userIT", "userRRHH"],
+      "depends_on_users": ["UserIT", "UserRRHH"]
+    },
+    {
+      "resource_name": "GG_FS_PROY_B_RO",
+      "name": "GG_FS_PROY_B_RO",
+      "depends_on_users": ["UserIT", "UserRRHH"]
+    },
+    {
+      "resource_name": "GG_FS_HOMES_CREATE",
+      "name": "GG_FS_HOMES_CREATE",
+      "members_to_include": ["userIT", "userFIN", "userRRHH"],
+      "depends_on_users": ["UserIT", "UserFIN", "UserRRHH"]
+    }
+  ]
+}

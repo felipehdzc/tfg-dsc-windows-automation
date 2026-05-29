@@ -1,0 +1,16 @@
+{
+  "ComputerName": "DC1",
+  "DcIp": "192.168.137.10",
+  "InterfaceAlias": "Ethernet",
+  "Forwarders": ["8.8.8.8", "1.1.1.1"],
+
+  "BGAdminLocalName": "BG_DC_local",
+  "BGAdminLocalPwd": "Admin_DC!2026",
+
+  "LocalAdminUser": "Administrador",
+  "LocalAdminPassword": "DC_local!2026",
+
+  "DsrmPassword": "Dsrmtfg26!",
+
+  "OutPath": "C:\\DSC\\DC\\ADDC-Config-Out"
+}

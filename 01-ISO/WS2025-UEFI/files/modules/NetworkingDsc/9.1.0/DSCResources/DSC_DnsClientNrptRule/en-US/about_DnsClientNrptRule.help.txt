@@ -1,0 +1,141 @@
+.NAME
+    DnsClientNrptRule
+
+.DESCRIPTION
+    This resource is used to control DNS Client NRPT rules for a node.
+
+.PARAMETER Name
+    Key - String
+    Specifies the DNS Client NRPT rule name.
+
+.PARAMETER Ensure
+    Write - String
+    Allowed values: Present, Absent
+    Specifies whether the DNS Client NRPT rule should exist. Defaults to 'Present'.
+
+.PARAMETER Comment
+    Write - String
+    Stores administrator notes.
+
+.PARAMETER DAEnable
+    Write - Boolean
+    Indicates the rule state for DirectAccess.
+
+.PARAMETER DAIPsecEncryptionType
+    Write - String
+    Allowed values: None, Low, Medium, High
+    Specifies the Internet Protocol security (IPsec) encryption setting for DirectAccess.
+
+.PARAMETER DAIPsecRequired
+    Write - Boolean
+    Indicates that IPsec is required for DirectAccess.
+
+.PARAMETER DANameServers
+    Write - StringArray
+    Specifies an array of DNS servers to query when DirectAccess is enabled.
+
+.PARAMETER DAProxyServerName
+    Write - String
+    Specifies the proxy server to use when connecting to the Internet. This parameter is only applicable if the DAProxyType parameter is set to UseProxyName.
+
+.PARAMETER DAProxyType
+    Write - String
+    Allowed values: NoProxy, UseDefault, UseProxyName
+    Specifies the proxy server type to be used when connecting to the Internet.
+
+.PARAMETER DisplayName
+    Write - String
+    Specifies an optional friendly name for the NRPT rule.
+
+.PARAMETER DnsSecEnable
+    Write - Boolean
+    Enables Domain Name System Security Extensions (DNSSEC) on the rule.
+
+.PARAMETER DnsSecIPsecEncryptionType
+    Write - String
+    Allowed values: None, Low, Medium, High
+    Specifies the IPsec tunnel encryption setting.
+
+.PARAMETER DnsSecIPsecRequired
+    Write - Boolean
+    Indicates the DNS client must set up an IPsec connection to the DNS server.
+
+.PARAMETER DnsSecValidationRequired
+    Write - Boolean
+    Indicates that DNSSEC validation is required.
+
+.PARAMETER IPsecTrustAuthority
+    Write - String
+    Specifies the certification authority to validate the IPsec channel.
+
+.PARAMETER NameEncoding
+    Write - String
+    Allowed values: Disable, Utf8WithMapping, Utf8WithoutMapping, Punycode
+    Specifies the encoding format for host names in the DNS query.
+
+.PARAMETER NameServers
+    Write - StringArray
+    Specifies the DNS servers to which the DNS query is sent when DirectAccess is disabled.
+
+.PARAMETER Namespace
+    Write - String
+    Specifies the DNS namespace.
+
+.EXAMPLE 1
+
+Sets a DNS Client NRPT rule named 'Contoso DNS Policy' to configure a conditional DNS forwarder (192.168.1.1) for a specific namespace (contoso.com).
+
+Configuration DnsClientNrptRule_Server_Config
+{
+    Import-DscResource -Module NetworkingDsc
+
+    Node localhost
+    {
+        DnsClientNrptRule Server
+        {
+            Name        = 'Contoso DNS Policy'
+            Namespace   = '.contoso.com'
+            NameServers = ('192.168.1.1')
+        }
+    }
+}
+
+.EXAMPLE 2
+
+Sets a DNS Client NRPT rule named 'DNSSEC' to enable DNSSEC queries for a specific namespace (contoso.com).
+
+Configuration DnsClientNrptRule_DNSSEC_Config
+{
+    Import-DscResource -Module NetworkingDsc
+
+    Node localhost
+    {
+        DnsClientNrptRule DNSSEC
+        {
+            Name         = 'DNSSEC'
+            Namespace    = 'contoso.com'
+            DnsSecEnable = $true
+        }
+    }
+}
+
+.EXAMPLE 3
+
+Sets a DNS Client NRPT rule named 'Punycode' to send Punycode DNS queries using a conditional DNS forwarder for a specific namespace(contoso.com).
+
+Configuration DnsClientNrptRule_Punycode_Config
+{
+    Import-DscResource -Module NetworkingDsc
+
+    Node localhost
+    {
+        DnsClientNrptRule Punycode
+        {
+            Name         = 'Punycode'
+            Namespace    = 'contoso.com'
+            NameEncoding = 'Punycode'
+            NameServers  = ('192.168.1.1')
+        }
+    }
+}
+

@@ -1,0 +1,17 @@
+{
+  "DomainName": "ad.umtfg.com",
+  "DomainNetbios": "ADTFG",
+  "DomainDN": "DC=ad,DC=umtfg,DC=com",
+
+  "DomainAdminUser": "Administrador",
+  "DomainAdminPassword": "DC_local!2026",
+
+  "FileServerName": "FS2",
+  "HomeShareName": "TFGData",
+  "HomeDrive": "H:",
+
+  "MgmtIPv4Filter": "192.168.137.0/24",
+  "MgmtRemoteAddr": ["192.168.137.0/24"],
+  "GpoWinRmMembers": "EXC-MGMT-WinRM-Members",
+  "GpoWinRmDCs": "EXC-MGMT-WinRM-DCs"
+}

@@ -1,0 +1,151 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">DnsServerDsc</S>
+      <S N="Version">3.0.2</S>
+      <S N="Type">Module</S>
+      <S N="Description">This module contains DSC resources for the management and configuration of Windows Server DNS Server.</S>
+      <S N="Author">DSC Community</S>
+      <S N="CompanyName">dsccommunity</S>
+      <S N="Copyright">Copyright the DSC Community contributors. All rights reserved.</S>
+      <DT N="PublishedDate">2025-12-05T17:09:18+01:00</DT>
+      <Nil N="InstalledDate" />
+      <Nil N="UpdatedDate" />
+      <URI N="LicenseUri">https://github.com/dsccommunity/DnsServerDsc/blob/main/LICENSE</URI>
+      <URI N="ProjectUri">https://github.com/dsccommunity/DnsServerDsc</URI>
+      <URI N="IconUri">https://dsccommunity.org/images/DSC_Logo_300p.png</URI>
+      <Obj N="Tags" RefId="1">
+        <TN RefId="1">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>DesiredStateConfiguration</S>
+          <S>DSC</S>
+          <S>DSCResourceKit</S>
+          <S>DSCResource</S>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="2">
+        <TN RefId="2">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Workflow</S>
+            <Obj N="Value" RefId="3">
+              <TNRef RefId="1" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Ref N="Value" RefId="3" />
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Ref N="Value" RefId="3" />
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Obj N="Value" RefId="4">
+              <TNRef RefId="1" />
+              <LST>
+                <S>DnsRecordCname</S>
+                <S>DnsRecordPtr</S>
+                <S>DnsRecordA</S>
+                <S>DnsRecordAaaa</S>
+                <S>DnsRecordMx</S>
+                <S>DnsRecordNs</S>
+                <S>DnsRecordSrv</S>
+                <S>DnsRecordTxt</S>
+                <S>DnsServerCache</S>
+                <S>DnsServerDsSetting</S>
+                <S>DnsServerEDns</S>
+                <S>DnsServerRecursion</S>
+                <S>DnsServerScavenging</S>
+                <S>DnsRecordAaaaScoped</S>
+                <S>DnsRecordAScoped</S>
+                <S>DnsRecordCnameScoped</S>
+                <S>DnsRecordMxScoped</S>
+                <S>DnsRecordNsScoped</S>
+                <S>DnsRecordSrvScoped</S>
+                <S>DnsRecordTxtScoped</S>
+                <S>DnsServerADZone</S>
+                <S>DnsServerClientSubnet</S>
+                <S>DnsServerConditionalForwarder</S>
+                <S>DnsServerDiagnostics</S>
+                <S>DnsServerForwarder</S>
+                <S>DnsServerPrimaryZone</S>
+                <S>DnsServerRootHint</S>
+                <S>DnsServerSecondaryZone</S>
+                <S>DnsServerSetting</S>
+                <S>DnsServerSettingLegacy</S>
+                <S>DnsServerZoneAging</S>
+                <S>DnsServerZoneScope</S>
+                <S>DnsServerZoneTransfer</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Ref N="Value" RefId="3" />
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Ref N="Value" RefId="3" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <S N="ReleaseNotes">## [3.0.2] - 2025-12-05_x000D__x000A__x000D__x000A_### Added_x000D__x000A__x000D__x000A_- DnsServerDsc_x000D__x000A_  - Added new resource_x000D__x000A_    - _DnsRecordTxt_ - resource to manage DNS TXT records ([issue #150](https://github.com/dsccommunity/DnsServerDsc/issues/150))._x000D__x000A_    - _DnsRecordTxtScoped_ - resource to manage DNS TXT records ([issue #296](https://github.com/dsccommunity/DnsServerDsc/issues/296))._x000D__x000A__x000D__x000A_### Fixed_x000D__x000A__x000D__x000A_- DnsServerSetting_x000D__x000A_  - Set-TargetResource was not correctly retrieving current settings from remote computers._x000D__x000A_  - Updated comment based help for various settings to include allowed values in decimal._x000D__x000A__x000D__x000A_### Changed_x000D__x000A__x000D__x000A_- DnsServerSetting_x000D__x000A_  - Allow MaximumUdpPacketSize to be read/write. Fixes [issue #307](https://github.com/dsccommunity/DnsServerDsc/issues/307)._x000D__x000A_  - Add input validation to RemoteIPv4RankBoost, RemoteIPv6RankBoost, MaximumRodcRsoQueueLength,_x000D__x000A_    MaximumRodcRsoAttemptsPerCycle, TcpReceivePacketSize, MaximumUdpPacketSize.</S>
+      <Obj N="Dependencies" RefId="5">
+        <TNRef RefId="1" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="6">
+        <TN RefId="3">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">Copyright the DSC Community contributors. All rights reserved.</S>
+          <S N="description">This module contains DSC resources for the management and configuration of Windows Server DNS Server.</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="releaseNotes">## [3.0.2] - 2025-12-05_x000D__x000A__x000D__x000A_### Added_x000D__x000A__x000D__x000A_- DnsServerDsc_x000D__x000A_  - Added new resource_x000D__x000A_    - _DnsRecordTxt_ - resource to manage DNS TXT records ([issue #150](https://github.com/dsccommunity/DnsServerDsc/issues/150))._x000D__x000A_    - _DnsRecordTxtScoped_ - resource to manage DNS TXT records ([issue #296](https://github.com/dsccommunity/DnsServerDsc/issues/296))._x000D__x000A__x000D__x000A_### Fixed_x000D__x000A__x000D__x000A_- DnsServerSetting_x000D__x000A_  - Set-TargetResource was not correctly retrieving current settings from remote computers._x000D__x000A_  - Updated comment based help for various settings to include allowed values in decimal._x000D__x000A__x000D__x000A_### Changed_x000D__x000A__x000D__x000A_- DnsServerSetting_x000D__x000A_  - Allow MaximumUdpPacketSize to be read/write. Fixes [issue #307](https://github.com/dsccommunity/DnsServerDsc/issues/307)._x000D__x000A_  - Add input validation to RemoteIPv4RankBoost, RemoteIPv6RankBoost, MaximumRodcRsoQueueLength,_x000D__x000A_    MaximumRodcRsoAttemptsPerCycle, TcpReceivePacketSize, MaximumUdpPacketSize.</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">False</S>
+          <S N="versionDownloadCount">97179</S>
+          <S N="downloadCount">1556870</S>
+          <S N="packageSize">252427</S>
+          <S N="published">05/12/2025 17:09:18 +01:00</S>
+          <S N="created">05/12/2025 17:09:18 +01:00</S>
+          <S N="lastUpdated">14/01/2026 19:10:00 +01:00</S>
+          <S N="tags">DesiredStateConfiguration DSC DSCResourceKit DSCResource PSModule PSDscResource_DnsRecordCname PSDscResource_DnsRecordPtr PSDscResource_DnsRecordA PSDscResource_DnsRecordAaaa PSDscResource_DnsRecordMx PSDscResource_DnsRecordNs PSDscResource_DnsRecordSrv PSDscResource_DnsRecordTxt PSDscResource_DnsServerCache PSDscResource_DnsServerDsSetting PSDscResource_DnsServerEDns PSDscResource_DnsServerRecursion PSDscResource_DnsServerScavenging PSDscResource_DnsRecordAaaaScoped PSDscResource_DnsRecordAScoped PSDscResource_DnsRecordCnameScoped PSDscResource_DnsRecordMxScoped PSDscResource_DnsRecordNsScoped PSDscResource_DnsRecordSrvScoped PSDscResource_DnsRecordTxtScoped PSDscResource_DnsServerADZone PSDscResource_DnsServerClientSubnet PSDscResource_DnsServerConditionalForwarder PSDscResource_DnsServerDiagnostics PSDscResource_DnsServerForwarder PSDscResource_DnsServerPrimaryZone PSDscResource_DnsServerRootHint PSDscResource_DnsServerSecondaryZone PSDscResource_DnsServerSetting PSDscResource_DnsServerSettingLegacy PSDscResource_DnsServerZoneAging PSDscResource_DnsServerZoneScope PSDscResource_DnsServerZoneTransfer PSIncludes_DscResource</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2026-01-14T19:10:00Z</S>
+          <S N="NormalizedVersion">3.0.2</S>
+          <S N="Authors">DSC Community</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">DnsServerDsc.nuspec|DSCResources\DSC_DnsServerZoneScope\DSC_DnsServerZoneScope.psm1|DnsServerDsc.psm1|DSCResources\DSC_DnsServerZoneAging\README.md|DnsServerDsc.psd1|DSCResources\DSC_DnsServerZoneAging\DSC_DnsServerZoneAging.psm1|en-US\DnsRecordAScoped.strings.psd1|DSCResources\DSC_DnsServerZoneAging\DSC_DnsServerZoneAging.schema.mof|en-US\DnsRecordTxt.strings.psd1|DSCResources\DSC_DnsServerSecondaryZone\DSC_DnsServerSecondaryZone.psm1|en-US\DnsServerEDns.strings.psd1|DSCResources\DSC_DnsServerSecondaryZone\DSC_DnsServerSecondaryZone.schema.mof|en-US\DnsRecordAaaa.strings.psd1|DSCResources\DSC_DnsServerSecondaryZone\README.md|en-US\DnsRecordMxScoped.strings.psd1|DSCResources\DSC_DnsServerADZone\DSC_DnsServerADZone.schema.mof|en-US\DnsRecordBase.strings.psd1|DSCResources\DSC_DnsServerADZone\README.md|en-US\DnsRecordNs.strings.psd1|DSCResources\DSC_DnsServerADZone\DSC_DnsServerADZone.psm1|en-US\about_DnsServerScavenging.help.txt|DSCResources\DSC_DnsServerZoneTransfer\DSC_DnsServerZoneTransfer.psm1|en-US\DnsRecordTxtScoped.strings.psd1|DSCResources\DSC_DnsServerZoneTransfer\DSC_DnsServerZoneTransfer.schema.mof|en-US\about_DnsRecordA.help.txt|DSCResources\DSC_DnsServerZoneTransfer\README.md|en-US\about_DnsRecordNs.help.txt|DSCResources\DSC_DnsServerPrimaryZone\README.md|en-US\about_DnsRecordNsScoped.help.txt|DSCResources\DSC_DnsServerPrimaryZone\DSC_DnsServerPrimaryZone.psm1|en-US\DnsRecordSrvScoped.strings.psd1|DSCResources\DSC_DnsServerPrimaryZone\DSC_DnsServerPrimaryZone.schema.mof|en-US\DnsServerScavenging.strings.psd1|DSCResources\DSC_DnsServerDiagnostics\DSC_DnsServerDiagnostics.psm1|en-US\about_DnsRecordCnameScoped.help.txt|DSCResources\DSC_DnsServerDiagnostics\README.md|en-US\about_DnsRecordMx.help.txt|DSCResources\DSC_DnsServerDiagnostics\DSC_DnsServerDiagnostics.schema.mof|en-US\about_DnsServerDsc.help.txt|DSCResources\DSC_DnsServerClientSubnet\DSC_DnsServerClientSubnet.schema.mof|en-US\about_DnsRecordTxtScoped.help.txt|DSCResources\DSC_DnsServerClientSubnet\README.md|en-US\DnsRecordSrv.strings.psd1|DSCResources\DSC_DnsServerClientSubnet\DSC_DnsServerClientSubnet.psm1|en-US\about_DnsServerRecursion.help.txt|DSCResources\DSC_DnsServerForwarder\en-US\about_DnsServerForwarder.help.txt|en-US\about_DnsRecordAaaaScoped.help.txt|DSCResources\DSC_DnsServerForwarder\en-US\DSC_DnsServerForwarder.strings.psd1|en-US\about_DnsRecordPtr.help.txt|DSCResources\DSC_DnsServerSetting\en-US\about_DnsServerSetting.help.txt|en-US\DnsRecordA.strings.psd1|DSCResources\DSC_DnsServerSetting\en-US\DSC_DnsServerSetting.strings.psd1|en-US\DnsRecordNsScoped.strings.psd1|DSCResources\DSC_DnsServerConditionalForwarder\en-US\DSC_DnsServerConditionalForwarder.strings.psd1|en-US\DnsRecordMx.strings.psd1|DSCResources\DSC_DnsServerConditionalForwarder\en-US\about_DnsServerConditionalForwarder.help.txt|en-US\DnsServerRecursion.strings.psd1|DSCResources\DSC_DnsServerRootHint\en-US\about_DnsServerRootHint.help.txt|en-US\DnsServerCache.strings.psd1|DSCResources\DSC_DnsServerRootHint\en-US\DSC_DnsServerRootHint.strings.psd1|en-US\about_DnsRecordAScoped.help.txt|DSCResources\DSC_DnsServerSettingLegacy\en-US\DSC_DnsServerSettingLegacy.strings.psd1|en-US\about_DnsRecordAaaa.help.txt|DSCResources\DSC_DnsServerSettingLegacy\en-US\about_DnsServerSettingLegacy.help.txt|en-US\DnsRecordCnameScoped.strings.psd1|DSCResources\DSC_DnsServerZoneScope\en-US\about_DnsServerZoneScope.help.txt|en-US\about_DnsRecordSrv.help.txt|DSCResources\DSC_DnsServerZoneScope\en-US\DSC_DnsServerZoneScope.strings.psd1|en-US\about_DnsRecordMxScoped.help.txt|DSCResources\DSC_DnsServerZoneAging\en-US\about_DnsServerZoneAging.help.txt|en-US\about_DnsServerEDns.help.txt|DSCResources\DSC_DnsServerZoneAging\en-US\DSC_DnsServerZoneAging.strings.psd1|en-US\about_DnsRecordCname.help.txt|DSCResources\DSC_DnsServerSecondaryZone\en-US\DSC_DnsServerSecondaryZone.strings.psd1|en-US\DnsRecordCname.strings.psd1|DSCResources\DSC_DnsServerSecondaryZone\en-US\about_DnsServerSecondaryZone.help.txt|en-US\DnsServerDsSetting.strings.psd1|DSCResources\DSC_DnsServerADZone\en-US\DSC_DnsServerADZone.strings.psd1|en-US\DnsRecordPtr.strings.psd1|DSCResources\DSC_DnsServerADZone\en-US\about_DnsServerADZone.help.txt|en-US\DnsServerDsc.strings.psd1|DSCResources\DSC_DnsServerZoneTransfer\en-US\DSC_DnsServerZoneTransfer.strings.psd1|en-US\about_DnsServerCache.help.txt|DSCResources\DSC_DnsServerZoneTransfer\en-US\about_DnsServerZoneTransfer.help.txt|en-US\about_DnsServerDsSetting.help.txt|DSCResources\DSC_DnsServerPrimaryZone\en-US\about_DnsServerPrimaryZone.help.txt|en-US\about_DnsRecordTxt.help.txt|DSCResources\DSC_DnsServerPrimaryZone\en-US\DSC_DnsServerPrimaryZone.strings.psd1|en-US\DnsRecordAaaaScoped.strings.psd1|DSCResources\DSC_DnsServerDiagnostics\en-US\DSC_DnsServerDiagnostics.strings.psd1|en-US\about_DnsRecordSrvScoped.help.txt|DSCResources\DSC_DnsServerDiagnostics\en-US\about_DnsServerDiagnostics.help.txt|en-US\ResourcePropertiesBase.strings.psd1|DSCResources\DSC_DnsServerClientSubnet\en-US\DSC_DnsServerClientSubnet.strings.psd1|DSCResources\DSC_DnsServerForwarder\DSC_DnsServerForwarder.schema.mof|DSCResources\DSC_DnsServerClientSubnet\en-US\about_DnsServerClientSubnet.help.txt|DSCResources\DSC_DnsServerForwarder\README.md|Modules\DscResource.Common\0.24.4\DscResource.Common.psd1|DSCResources\DSC_DnsServerForwarder\DSC_DnsServerForwarder.psm1|Modules\DscResource.Common\0.24.4\DscResource.Common.psm1|DSCResources\DSC_DnsServerSetting\README.md|Modules\DscResource.Base\1.4.0\DscResource.Base.psm1|DSCResources\DSC_DnsServerSetting\DSC_DnsServerSetting.psm1|Modules\DscResource.Base\1.4.0\DscResource.Base.psd1|DSCResources\DSC_DnsServerSetting\DSC_DnsServerSetting.schema.mof|Modules\DscResource.Common\0.24.4\en-US\DscResource.Common-help.xml|DSCResources\DSC_DnsServerConditionalForwarder\DSC_DnsServerConditionalForwarder.schema.mof|Modules\DscResource.Common\0.24.4\en-US\about_DscResource.Common.help.txt|DSCResources\DSC_DnsServerConditionalForwarder\README.md|Modules\DscResource.Common\0.24.4\en-US\DscResource.Common.strings.psd1|DSCResources\DSC_DnsServerConditionalForwarder\DSC_DnsServerConditionalForwarder.psm1|Modules\DscResource.Base\1.4.0\en-US\ResourceBase.strings.psd1|DSCResources\DSC_DnsServerRootHint\README.md|Modules\DscResource.Base\1.4.0\en-US\about_DscResource.Base.help.txt|DSCResources\DSC_DnsServerRootHint\DSC_DnsServerRootHint.psm1|Modules\DscResource.Base\1.4.0\en-US\DscResource.Base.strings.psd1|DSCResources\DSC_DnsServerRootHint\DSC_DnsServerRootHint.schema.mof|Modules\DscResource.Base\1.4.0\Modules\DscResource.Common\0.23.0\DscResource.Common.psd1|DSCResources\DSC_DnsServerSettingLegacy\DSC_DnsServerSettingLegacy.psm1|Modules\DscResource.Base\1.4.0\Modules\DscResource.Common\0.23.0\DscResource.Common.psm1|DSCResources\DSC_DnsServerSettingLegacy\README.md|Modules\DscResource.Base\1.4.0\Modules\DscResource.Common\0.23.0\en-US\DscResource.Common-help.xml|DSCResources\DSC_DnsServerSettingLegacy\DSC_DnsServerSettingLegacy.schema.mof|Modules\DscResource.Base\1.4.0\Modules\DscResource.Common\0.23.0\en-US\about_DscResource.Common.help.txt|DSCResources\DSC_DnsServerZoneScope\DSC_DnsServerZoneScope.schema.mof|Modules\DscResource.Base\1.4.0\Modules\DscResource.Common\0.23.0\en-US\DscResource.Common.strings.psd1|DSCResources\DSC_DnsServerZoneScope\README.md</S>
+          <S N="GUID">5f70e6a1-f1b2-4ba0-8276-8967d43a7ec2</S>
+          <S N="PowerShellVersion">5.0</S>
+          <S N="CompanyName">DSC Community</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\WS2025\files\modules\DnsServerDsc\3.0.2</S>
+    </MS>
+  </Obj>
+</Objs>

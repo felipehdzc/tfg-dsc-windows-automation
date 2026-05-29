@@ -1,0 +1,80 @@
+.NAME
+    DnsRecordTxt
+
+.SYNOPSIS
+    The DnsRecordTxt DSC resource manages TXT DNS records against a specific zone on a Domain Name System (DNS) server.
+
+.DESCRIPTION
+    The DnsRecordTxt DSC resource manages TXT DNS records against a specific zone on a Domain Name System (DNS) server.
+
+.PARAMETER Name
+    Key - System.String
+    Specifies the name of a DNS server resource record object.
+
+.PARAMETER DescriptiveText
+    Key - System.String
+    Specifies additional text to describe a resource record on a DNS server. It is limited to 254 characters per line.
+
+.EXAMPLE 1
+
+This configuration will ensure a DNS TXT record exists when only the mandatory properties are specified.
+
+Configuration DnsRecordTxt_Mandatory_config
+{
+    Import-DscResource -ModuleName 'DnsServerDsc'
+
+    Node localhost
+    {
+        DnsRecordTxt 'TestRecord'
+        {
+            ZoneName        = 'contoso.com'
+            Name            = 'test'
+            DescriptiveText = 'Example text for test.contoso.com TXT record.'
+            Ensure          = 'Present'
+        }
+    }
+}
+
+.EXAMPLE 2
+
+This configuration will ensure a DNS TXT record exists when all properties are specified.
+
+Configuration DnsRecordTxt_Full_config
+{
+    Import-DscResource -ModuleName 'DnsServerDsc'
+
+    Node localhost
+    {
+        DnsRecordTxt 'TestRecord Multiline Full'
+        {
+            ZoneName        = 'contoso.com'
+            Name            = 'sea2048._domainkey'
+            DescriptiveText = 'Example text for test.contoso.com TXT record.'
+            TimeToLive      = '01:00:00'
+            DnsServer       = 'localhost'
+            Ensure          = 'Present'
+        }
+    }
+}
+
+.EXAMPLE 3
+
+This configuration will ensure a DNS TXT record does not exist when mandatory properties are specified.
+
+Note that not all mandatory properties are necessarily key properties. Non-key property values will be ignored when determining whether the record is to be removed.
+
+Configuration DnsRecordTxt_Remove_config
+{
+    Import-DscResource -ModuleName 'DnsServerDsc'
+
+    Node localhost
+    {
+        DnsRecordTxt 'TestRecord'
+        {
+            ZoneName        = 'contoso.com'
+            Name            = 'test'
+            DescriptiveText = 'Example text for test.contoso.com TXT record.'
+            Ensure          = 'Absent'
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.NAME
+    ADReadOnlyDomainControllerAccount
+
+.DESCRIPTION
+    The ADReadOnlyDomainControllerAccount DSC resource will pre-create a read only domain
+    controller account in Active Directory. This allows the account actually installing
+    the read only domain controller to use delegated administrative credentials supplied in
+    DelegatedAdministratorAccountName rather than requiring Domain Admins permissions.
+
+    > The resource does not support removing pre-created Read Only Domain Controller accounts.
+
+    ## Requirements
+
+    * Target machine must be running Windows Server 2008 R2 or later.
+
+.PARAMETER DomainControllerAccountName
+    Key - String
+    The name of the Read Only Domain Controller Account which will be created.
+
+.PARAMETER DomainName
+    Key - String
+    The fully qualified domain name (FQDN) of the domain the Read Only Domain Controller will be created in.
+
+.PARAMETER Credential
+    Required - Instance
+    The credentials (as a 'PSCredential' object) of a user that has Domain Administrator rights to add the Read Only Domain Controller Account to the domain.
+
+.PARAMETER SiteName
+    Required - String
+    The name of the site this Read Only Domain Controller Account will be added to.
+
+.PARAMETER IsGlobalCatalog
+    Write - Boolean
+    Specifies if the read only domain controller will be a Global Catalog (GC).
+
+.PARAMETER Ensure
+    Read - String
+    Returns the state of the Read Only Domain Controller Account.
+
+.PARAMETER DelegatedAdministratorAccountName
+    Write - String
+    Specifies the user or group that is the delegated administrator of this Read-Only Domain Controller (RODC) Account.
+
+.PARAMETER AllowPasswordReplicationAccountName
+    Write - StringArray
+    Specifies an array of names of user accounts, group accounts, and computer accounts whose passwords can be replicated to this Read-Only Domain Controller (RODC) Account.
+
+.PARAMETER DenyPasswordReplicationAccountName
+    Write - StringArray
+    Specifies the names of user accounts, group accounts, and computer accounts whose passwords are not to be replicated to this Read-Only Domain Controller (RODC) Account.
+
+.PARAMETER InstallDns
+    Write - Boolean
+    Specifies if the DNS Server service should be installed and configured on the Read Only Domain Controller. If this is not set the default value of the parameter InstallDns of the cmdlet Add-ADDSReadOnlyDomainControllerAccount is used. This parameter is only used during the provisioning of a read only domain controller. The parameter cannot be used to install or uninstall the DNS server on an already provisioned read only domain controller.
+
+.PARAMETER Enabled
+    Read - Boolean
+    Specifies if the Read Only Domain Controller Account is Enabled, or Disabled (Unoccupied).
+
